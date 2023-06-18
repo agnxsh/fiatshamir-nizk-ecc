@@ -20,6 +20,7 @@ $ docker compose up -d
 
 Sample Run
 
+```
 Bob and Alice agree:
 G: 3fd96d7b139e8805e3d94f1e04cd637aae7b9c2565a708464b62449cbbfb07fa
 H: f7bf1938a30b2a84e745cbe96b25854be4a62ea69b936b8071bad412c89118f5
@@ -39,5 +40,6 @@ v: 18025bbd0c975f8762a263603ab1c1887884e10a748a65b2f2a428a90994220f
 r: af90b47cf39b03966bd5003de377147c0103e4d22b424740a23dcd046057300e
 
 Proof correct
+```
 
 Explanation
