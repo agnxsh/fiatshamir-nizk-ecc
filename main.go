@@ -49,7 +49,7 @@ func main () {
 	h:= suite.Hash()
 	xG.MarshalTo(h)
 	xH.MarshalTo(h)
-	vG.MarshalTo(h)
+	vG.MarshalTo(h)g
 	vH.MarshalTo(h)
 
 	cb := h.Sum(nil)

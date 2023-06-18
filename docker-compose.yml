@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  trishul:
+    build: .
+    volumes:
+      - ./:/fiatshamir-nizk-ecc
+    environment:
+      - USER=agnish
+    container_name: fiatshamir-nizk-ecc
