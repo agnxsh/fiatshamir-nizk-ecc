@@ -49,7 +49,7 @@ func main () {
 	h:= suite.Hash()
 	xG.MarshalTo(h)
 	xH.MarshalTo(h)
-	vG.MarshalTo(h)g
+	vG.MarshalTo(h)
 	vH.MarshalTo(h)
 
 	cb := h.Sum(nil)
@@ -59,6 +59,21 @@ func main () {
 	r := suite.Scalar()
 	r.Mul(x, c).Sub(v, r)
 
+	rG := suite.Point().Mul(r,G)
+	rH := suite.Point().Mul(r,H)
+	cxG := suite.Point().Mul(c,xG)
+	cxH := suite.Point().Mul(c,xH)
+	a := suite.Point().Add(rG, cxG)
+	b := suite.Point().Add(rH, cxH)
 
+	fmt.Printf("Bob generates a challenge without Alice interacting with Bob:\n c: %s\n\n",c)
+	fmt.Printf("Bob computes: \n v:\t%s\n r:\t%s\n\n",v,r)
 
+	if !(vG.Equal(a)&&vH.Equal(b)){
+		fmt.Printf("Incorrect Proof!")
+
+	} else{
+		fmt.Printf("Correct Proof!")
+	}
+	
 }

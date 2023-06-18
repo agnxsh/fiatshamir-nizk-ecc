@@ -1,9 +1,9 @@
-FROM go:1.18
+FROM golang:1.18-alpine as builder
 
 WORKDIR /fiatshamir-nizk-ecc
 
 COPY . .
 
-RUN apt update
-
 RUN go build
+
+
